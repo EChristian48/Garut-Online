@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Daftar - SMK Wikrama 1 Garut</title>
+
+    <link
+      rel="stylesheet"
+      href="/assets/bootstrap/dist/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <button class="btn btn-outline-light my-2" id="kembaliButton">
+          Kembali
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="container-fluid bg-orange-100 py-lg-4 py-3">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="card">
+                <div class="card-header"></div>
+                <div class="card-body">
+                  <form>
+
+                    <div class="form-group row">
+                      <div class="col-sm-2">
+                        <h5 class="mb-0">Jalur Penerimaan</h5>
+                      </div>
+                      <div class="col-sm-10 my-3">
+                        <div class="custom-control custom-control-inline custom-radio">
+                          <input
+                            class="custom-control-input"
+                            type="radio"
+                            id="radioReguler"
+                            name="jalur"
+                            value="reguler"
+                          />
+                          <label class="custom-control-label" for="radioReguler"
+                            >Reguler</label
+                          >
+                        </div>
+                        <div class="custom-control custom-control-inline custom-radio">
+                          <input
+                            class="custom-control-input"
+                            type="radio"
+                            id="radioBeasiswa"
+                            name="jalur"
+                            value="beasiswa"
+                          />
+                          <label class="custom-control-label" for="radioBeasiswa"
+                            >Beasiswa</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col">
+                        <h4>1. Data Calon Murid</h4>
+                        <hr />
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <div class="col-sm-2 col-form-label">
+                        <label for="textNama">Nama Lengkap</label>
+                      </div>
+                      <div class="col-sm-10">
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="nama"
+                          id="textNama"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <div class="col-sm-2 col-form-label">
+                        <label for="textNamaPanggilan">Nama Panggilan</label>
+                      </div>
+                      <div class="col-sm-10">
+                        <input
+                          class="form-control"
+                          type="text"
+                          name="namaPanggilan"
+                          id="textNamaPanggilan"
+                        />
+                      </div>
+                    </div>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="navbar navbar-dark bg-dark justify-content-center">
+      <p class="text-white text-center">
+        Made by Erick Christian, with the help of Bootstrap
+      </p>
+    </footer>
+
+    <script src="/assets/jquery/dist/jquery.js"></script>
+    <script src="/assets/js/popper.js"></script>
+    <script src="/assets/bootstrap/dist/js/bootstrap.js"></script>
+  </body>
+</html>

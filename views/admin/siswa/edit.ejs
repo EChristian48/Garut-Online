@@ -1,0 +1,918 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>SMK Wikrama 1 Garut</title>
+
+    <link rel="stylesheet" href="/assets/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">SMK Wikrama 1 Garut</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#profil">Profil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#tentang">Tentang</a>
+            </li>
+          </ul>
+          <button class="btn btn-outline-light my-2" id="daftarButton">
+            Logout
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section
+        class="container-fluid bg-blue-grey-100 py-lg-4 py-3"
+        id="profil"
+      >
+        <div class="container">
+          <div class="row">
+            <div class="col" id="mainCol">
+
+            <form>
+            <div class="accordion">
+              <div class="card">
+                <div class="card-header">
+                  <h3>Data Siswa</h3>
+                </div>
+                <div class="card-body">
+                  
+
+                    <fieldset class="form-group">
+                      <div class="row">
+                        <legend class="col-form-label col-sm-2 pt-0">
+                          Jalur Penerimaan
+                        </legend>
+                        <div class="col-sm-10">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="jalur"
+                              id="reguler"
+                              value="false"
+                              <% if (!siswa.jalur) { %>
+                                checked 
+                                <% } %> />
+                            <label class="form-check-label" for="reguler">
+                              Reguler
+                            </label>
+                          </div>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="jalur"
+                              id="beasiswa"
+                              value="true"
+                              <% if (siswa.jalur) { %>
+                                checked 
+                                <% } %> />
+                            <label class="form-check-label" for="beasiswa">
+                              Beasiswa
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+
+
+
+            
+                </div>
+
+                <div class="card-header">
+                    <a class="h5" href="#bagian1" data-toggle="collapse">1. Data Calon Siswa</a>
+                </div>
+                <div class="collapse" id="bagian1">
+                    <div class="card-body">
+                        <div class="form-group row">
+                            <label for="namaLengkap" class="col-sm-2 col-form-label"
+                              >Nama Lengkap</label
+                            >
+                            <div class="col-sm-10">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="namaLengkap"
+                                name="namaLengkap"
+                                value="<%= siswa.data_siswa.nama_lengkap %>"
+                              />
+                            </div>
+                          </div>
+          
+                          <div class="form-group row">
+                            <label for="namaPanggilan" class="col-sm-2 col-form-label"
+                              >Nama Panggilan</label
+                            >
+                            <div class="col-sm-10">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="namaPanggilan"
+                                name="namaPanggilan"
+                                value="<%= siswa.data_siswa.nama_panggilan %>"
+                              />
+                            </div>
+                          </div>
+          
+                          <fieldset class="form-group">
+                            <div class="row">
+                              <legend class="col-form-label col-sm-2 pt-0">
+                                Jenis Kelamin
+                              </legend>
+                              <div class="col-sm-10">
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="jk"
+                                    id="lakiLaki"
+                                    value="false"
+                                    <% if (!siswa.data_siswa.jk) { %>
+                                  checked 
+                                  <% } %> />
+                                  <label class="form-check-label" for="lakiLaki">
+                                    Laki-laki
+                                  </label>
+                                </div>
+                                <div class="form-check">
+                                  <input
+                                    class="form-check-input"
+                                    type="radio"
+                                    name="jk"
+                                    id="perempuan"
+                                    value="true"
+                                    <% if (siswa.data_siswa.jk) { %>
+                                      checked 
+                                      <% } %> />
+                                  <label class="form-check-label" for="perempuan">
+                                    Perempuan
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                          </fieldset>
+          
+                          <div class="form-group row">
+                            <label for="tempatLahir" class="col-sm-2 col-form-label"
+                              >Tempat Lahir</label
+                            >
+                            <div class="col-sm-10">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="tempatLahir"
+                                name="tempatLahir"
+                                value="<%= siswa.data_siswa.ttl.tempat_lahir %>"
+                              />
+                            </div>
+                          </div>
+          
+                          <div class="form-group row">
+                            <label for="tanggalLahir" class="col-sm-2 col-form-label"
+                              >Tanggal Lahir</label
+                            >
+                            <div class="col-sm-10">
+                              <input
+                                class="form-control"
+                                type="date"
+                                name="tanggalLahir"
+                                id="tanggalLahir"
+                                value="<%= Date(siswa.data_siswa.ttl.tanggal_lahir) %>"
+                              />
+                            </div>
+                          </div>
+          
+                          <div class="form-group row">
+                            <label for="agama" class="col-sm-2 col-form-label"
+                              >Agama</label
+                            >
+                            <div class="col-sm-10">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="agama"
+                                name="agama"
+                                value="<%= siswa.data_siswa.agama %>"
+                              />
+                            </div>
+                          </div>
+          
+                          <div class="form-group row">
+                            <label for="citaCita" class="col-sm-2 col-form-label"
+                              >Cita-cita</label
+                            >
+                            <div class="col-sm-10">
+                              <input
+                                type="text"
+                                class="form-control"
+                                id="citaCita"
+                                name="citaCita"
+                                value="<%= siswa.data_siswa.cita_cita %>"
+                              />
+                            </div>
+                          </div>   
+                          
+                          <div class="form-group row">
+                              <label for="hobi" class="col-sm-2 col-form-label"
+                                >Hobi</label
+                              >
+                              <div class="col-sm-10">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  id="hobi"
+                                  name="hobi"
+                                  value="<%= siswa.data_siswa.hobi %>"
+                                />
+                              </div>
+                            </div>
+          
+                            <div class="form-group row">
+                              <label for="anakKe" class="col-sm-2 col-form-label"
+                                >Anak-ke</label
+                              >
+                              <div class="col-sm-10">
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  id="anakKe"
+                                  name="anakKe"
+                                  value="<%= siswa.data_siswa.anak_ke %>"
+                                />
+                              </div>
+                            </div>
+          
+                            <div class="form-group row">
+                              <label for="jumlahSaudara" class="col-sm-2 col-form-label"
+                                >Jumlah Saudara</label
+                              >
+                              <div class="col">
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  id="saudaraKandung"
+                                  name="saudaraKandung"
+                                  placeholder="Kandung"
+                                  value="<%= siswa.data_siswa.jumlah_saudara.kandung %>"
+                                />
+                              </div>
+          
+                              <div class="col">
+                                  <input
+                                      type="number"
+                                      class="form-control"
+                                      id="saudaraTiri"
+                                      name="saudaraTiri"
+                                      placeholder="Tiri"
+                                      value="<%= siswa.data_siswa.jumlah_saudara.tiri %>"
+                                  />
+                              </div>
+          
+                              <div class="col">
+                                  <input
+                                      type="number"
+                                      class="form-control"
+                                      id="saudaraAngkat"
+                                      name="saudaraAngkat"
+                                      placeholder="Angkat"
+                                      value="<%= siswa.data_siswa.jumlah_saudara.angkat %>"
+                                  />
+                              </div>
+                            </div>
+          
+                            <div class="form-group row">
+                              <label for="beratBadan" class="col-sm-2 col-form-label"
+                                >Berat Badan</label
+                              >
+                              <div class="col-sm-10">
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  id="beratBadan"
+                                  name="beratBadan"
+                                  value="<%= siswa.data_siswa.berat_badan %>"
+                                />
+                              </div>
+                            </div>
+          
+                            <div class="form-group row">
+                              <label for="tinggiBadan" class="col-sm-2 col-form-label"
+                                >Tinggi Badan</label
+                              >
+                              <div class="col-sm-10">
+                                <input
+                                  type="number"
+                                  class="form-control"
+                                  id="tinggiBadan"
+                                  name="tinggiBadan"
+                                  value="<%= siswa.data_siswa.tinggi_badan %>"
+                                />
+                              </div>
+                            </div>
+                            
+                            <div class="form-group row">
+                              <label for="golDarah" class="col-sm-2 col-form-label"
+                                >Gol. Darah</label
+                              >
+                              <div class="col-sm-10">
+                                  <select class="custom-select" name="golDarah" id="golDarah">
+                                      <option value="A"
+                                      <% if (siswa.data_siswa.gol_darah=="A") { %>
+                                      selected 
+                                      <% } %>>A</option>
+                                      <option value="B"
+                                      <% if (siswa.data_siswa.gol_darah=="B") { %>
+                                      selected 
+                                      <% } %>>B</option>
+                                      <option value="O"
+                                      <% if (siswa.data_siswa.gol_darah=="O") { %>
+                                      selected 
+                                      <% } %>>O</option>
+                                      <option value="AB"
+                                      <% if (siswa.data_siswa.gol_darah=="AB") { %>
+                                      selected 
+                                      <% } %>>AB</option>
+                                  </select>
+                              </div>
+                            </div>
+                    </div>
+                </div>
+
+
+                <div class="card-header">
+                    <a class="h5" href="">2. Keterangan Tempat Tinggal</a>
+                </div>
+                <div class="card-body">
+                    <div class="form-group row">
+                        <label for="alamat" class="col-sm-2 col-form-label"
+                          >Alamat</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="alamat"
+                            name="alamat"
+                            value="<%= siswa.tempat_tinggal.alamat %>"
+                          />
+                        </div>
+                      </div>
+    
+                      <div class="form-group row">
+                        <label for="kelurahan" class="col-sm-2 col-form-label"
+                          >Kelurahan</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="kelurahan"
+                            name="kelurahan"
+                            value="<%= siswa.tempat_tinggal.kelurahan %>"
+                          />
+                        </div>
+                      </div>
+    
+                      <div class="form-group row">
+                        <label for="kecamatan" class="col-sm-2 col-form-label"
+                          >Kecamatan</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="kecamatan"
+                            name="kecamatan"
+                            value="<%= siswa.tempat_tinggal.kecamatan %>"
+                          />
+                        </div>
+                      </div>
+    
+                      <div class="form-group row">
+                        <label for="kota" class="col-sm-2 col-form-label"
+                          >Kota</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="kota"
+                            name="kota"
+                            value="<%= siswa.tempat_tinggal.kota %>"
+                          />
+                        </div>
+                      </div>
+    
+                      <div class="form-group row">
+                        <label for="provinsi" class="col-sm-2 col-form-label"
+                          >Provinsi</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="provinsi"
+                            name="provinsi"
+                            value="<%= siswa.tempat_tinggal.provinsi %>"
+                          />
+                        </div>
+                      </div>
+    
+                      <div class="form-group row">
+                        <label for="kode_pos" class="col-sm-2 col-form-label"
+                          >Kode Pos</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="kode_pos"
+                            name="kode_pos"
+                            value="<%= siswa.tempat_tinggal.kode_pos %>"
+                          />
+                        </div>
+                      </div>
+    
+                      <div class="form-group row">
+                        <label for="no_telp_rumah" class="col-sm-2 col-form-label"
+                          >No. Telpon Rumah</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="no_telp_rumah"
+                            name="no_telp_rumah"
+                            value="<%= siswa.tempat_tinggal.no_telp_rumah %>"
+                          />
+                        </div>
+                      </div>
+    
+                      <div class="form-group row">
+                        <label for="email" class="col-sm-2 col-form-label"
+                          >Email</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            name="email"
+                            value="<%= siswa.tempat_tinggal.email %>"
+                          />
+                        </div>
+                      </div>
+    
+                      <fieldset class="form-group">
+                        <div class="row">
+                          <legend class="col-form-label col-sm-2 pt-0">
+                            Tinggal Dengan
+                          </legend>
+                          <div class="col-sm-10">
+    
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="tinggalDengan"
+                                id="Orang Tua"
+                                value="Orang Tua"
+                                <% if (siswa.tempat_tinggal.tinggal_dengan === "Orang Tua") { %>
+                                  checked 
+                                  <% } %> />
+                              <label class="form-check-label" for="Orang Tua">
+                                Orang Tua
+                              </label>
+                            </div>
+    
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="tinggalDengan"
+                                id="asrama"
+                                value="Asrama"
+                                <% if (siswa.tempat_tinggal.tinggal_dengan === "Asrama") { %>
+                                  checked 
+                                  <% } %> />
+                              <label class="form-check-label" for="asrama">
+                                Asrama
+                              </label>
+                            </div>
+    
+                            <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="radio"
+                                  name="tinggalDengan"
+                                  id="saudara"
+                                  value="Saudara"
+                                  <% if (siswa.tempat_tinggal.tinggal_dengan === "Saudara") { %>
+                                    checked 
+                                    <% } %> />
+                                <label class="form-check-label" for="saudara">
+                                  Saudara
+                                </label>
+                            </div>
+    
+                          </div>
+                        </div>
+                      </fieldset>
+                </div>
+
+                <div class="card-header">
+                    <a class="h5" href="">3. Keterangan Kesehatan</a>
+                </div>
+                <div class="card-body">
+                    <fieldset class="form-group">
+                        <div class="row">
+                          <legend class="col-form-label col-sm-2 pt-0">
+                            Penyakit yang pernah diderita
+                          </legend>
+                          <div class="col-sm-10">
+    
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="checkbox"
+                                name="tbc"
+                                id="tbc"
+                                <% if (siswa.kesehatan.tbc) { %>
+                                  checked 
+                                  <% } %> />
+                              <label class="form-check-label" for="tbc">
+                                TBC
+                              </label>
+                            </div>
+    
+                            <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  name="malaria"
+                                  id="malaria"
+                                  <% if (siswa.kesehatan.malaria) { %>
+                                    checked 
+                                    <% } %> />
+                                <label class="form-check-label" for="malaria">
+                                  Malaria
+                                </label>
+                              </div>
+    
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  name="chotipa"
+                                  id="chotipa"
+                                  <% if (siswa.kesehatan.chotipa) { %>
+                                    checked 
+                                    <% } %> />
+                                <label class="form-check-label" for="chotipa">
+                                  Chotipa
+                                </label>
+                              </div>
+                              
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  name="cacar"
+                                  id="cacar"
+                                  <% if (siswa.kesehatan.cacar) { %>
+                                    checked 
+                                    <% } %> />
+                                <label class="form-check-label" for="cacar">
+                                  Cacar
+                                </label>
+                              </div>
+    
+                          </div>
+                        </div>
+                      </fieldset>
+    
+                      <div class="form-group row">
+                        <label for="lainnya" class="col-sm-2 col-form-label"
+                          >Lainnya</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="lainnya"
+                            name="lainnya"
+                            value="<%= siswa.kesehatan.lainnya %>"
+                          />
+                        </div>
+                      </div>
+                </div>
+
+                <div class="card-header">
+                    <a class="h5" href="">4. Data Orang Tua/Wali</a>
+                </div>
+                <div class="card-body">
+                  <% for(let orang_tua of siswa.orang_tua) { %>
+
+                    <h6 class="mt-4"><%= orang_tua.tipe%></h6>
+                    <hr />
+                  
+                    <div class="form-group row">
+                        <label for="orangTuaNama" class="col-sm-2 col-form-label"
+                          >Nama</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="orangTuaNama"
+                            name="orangTuaNama"
+                            value="<%= orang_tua.nama %>"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="orangTuaTempatLahir" class="col-sm-2 col-form-label"
+                          >Tempat Lahir</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="orangTuaTempatLahir"
+                            name="orangTuaTempatLahir"
+                            value="<%= orang_tua.ttl.tempat_lahir %>"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="orangTuaTanggalLahir" class="col-sm-2 col-form-label"
+                          >Tanggal Lahir</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="date"
+                            class="form-control"
+                            id="orangTuaTanggalLahir"
+                            name="orangTuaTanggalLahir"
+                            value="<%= orang_tua.ttl.tanggal_lahir %>"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="orangTuaPekerjaan" class="col-sm-2 col-form-label"
+                          >Pekerjaan</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="orangTuaPekerjaan"
+                            name="orangTuaPekerjaan"
+                            value="<%= orang_tua.pekerjaan %>"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="orangTuaPendidikan" class="col-sm-2 col-form-label"
+                          >Pendidikan</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="orangTuaPendidikan"
+                            name="orangTuaPendidikan"
+                            value="<%= orang_tua.pendidikan %>"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="orangTuaKewarganegaraan" class="col-sm-2 col-form-label"
+                          >Kewarganegaraan</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="orangTuaKewarganegaraan"
+                            name="orangTuaKewarganegaraan"
+                            value="<%= orang_tua.kewarganegaraan %>"
+                          />
+                        </div>
+                      </div>
+
+                        <div class="form-group row">
+                        <label for="orangTuaAgama" class="col-sm-2 col-form-label"
+                          >Agama</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="orangTuaAgama"
+                            name="orangTuaAgama"
+                            value="<%= orang_tua.agama %>"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="orangTuaNoHP" class="col-sm-2 col-form-label"
+                          >No. Handphone</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="orangTuaNoHP"
+                            name="orangTuaNoHP"
+                            value="<%= orang_tua.no.no_hp %>"
+                          />
+                        </div>
+                      </div>
+
+                      
+                      <div class="form-group row">
+                        <label for="orangTuaNoWA" class="col-sm-2 col-form-label"
+                          >No. Whatsapp</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="number"
+                            class="form-control"
+                            id="orangTuaNoWA"
+                            name="orangTuaNoWA"
+                            value="<%= orang_tua.no.no_wa %>"
+                          />
+                        </div>
+                      </div>
+
+                  <% if (orang_tua.tipe == "Wali") { %>
+                    <div class="form-group row">
+                        <label for="waliEmail" class="col-sm-2 col-form-label"
+                          >Email</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="waliEmail"
+                            name="waliEmail"
+                            value="<%= orang_tua.no.email %>"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="form-group row">
+                        <label for="waliHubungan" class="col-sm-2 col-form-label"
+                          >Hubungan</label
+                        >
+                        <div class="col-sm-10">
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="waliHubungan"
+                            name="waliHubungan"
+                            value="<%= orang_tua.no.hubungan %>"
+                          />
+                        </div>
+                      </div>
+                    <% }} %>
+                </div>
+
+                <div class="card-header">
+                    <a class="h5" href="">5. Nilai Rapor</a>
+                </div>
+                <div class="card-body">
+                    <table class="table table-dark table-bordered table-hover">
+                        <thead class="text-center">
+                            <tr>
+                                <td rowspan="2">No.</td>
+                                <td rowspan="2">Mata Pelajaran</td>
+                                <td colspan="2">Kelas 7</td>
+                                <td colspan="2">Kelas 8</td>
+                                <td>Kelas 9</td>
+                            </tr>
+                            <tr>
+                                <td>Semester 1</td>
+                                <td>Semester 2</td>
+                                <td>Semester 1</td>
+                                <td>Semester 2</td>
+                                <td>Semester 1</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                            <tr>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                            </tr>
+
+                            <tr>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                            </tr>
+
+                            <tr>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                            </tr>
+
+                            <tr>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                            </tr>
+
+                            <tr>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                                <td>Aku Lucu</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+                    <div class="form-group row">
+                        <label for="prestasi" class="col-sm-2 col-form-label"
+                          >Prestasi yang pernah diraih</label
+                        >
+                        <div class="col-sm-10">
+                            <textarea name="prestasi" id="prestasi" cols="50" rows="10"
+                            ><% for( let {deskripsi} of siswa.prestasi) { %><%= deskripsi %>, <% } %></textarea>
+                        </div>
+                      </div>
+                </div>
+
+              </div>
+            </div>
+            </form>
+
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="navbar navbar-dark bg-dark justify-content-center">
+      <p class="text-white text-center">
+        Made by Erick Christian, with the help of Bootstrap
+      </p>
+    </footer>
+
+    <script src="/assets/jquery/dist/jquery.js"></script>
+    <script src="/assets/@popperjs/core/dist/umd/popper.js"></script>
+    <script src="/assets/bootstrap/dist/js/bootstrap.js"></script>
+  </body>
+</html>
