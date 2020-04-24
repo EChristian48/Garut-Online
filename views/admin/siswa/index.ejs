@@ -48,7 +48,7 @@
         <div class="container">
           <div class="row">
             <div class="col" id="mainCol">
-              <table class="table table-dark table-striped">
+              <table class="table table-dark table-striped table-hover">
                 <thead>
                   <tr>
                     <th>Nama</th>
@@ -61,22 +61,22 @@
                 <tbody>
                   <% for (let siswa of siswas) { %>
                   <tr>
-                    <td><a href="/admin/siswa/<%= siswa._id %>"><%= siswa.data_siswa.nama_lengkap %></a></td>
-                    <td><%= siswa.tempat_tinggal.email %></td>
+                    <td><a class="text-light" href="/admin/siswa/<%= siswa._id %>"><%= siswa.data_siswa.nama_lengkap %></a></td>
+                    <td><a class="text-light" href="/admin/siswa/<%= siswa._id %>"><%= siswa.tempat_tinggal.email %></a></td>
 
                     <% for (let orang_tua of siswa.orang_tua) {
                       if (orang_tua.tipe === "Ayah") { %>
-                    <td><%= orang_tua.nama %></td>
+                    <td><a class="text-light" href="/admin/siswa/<%= siswa._id %>"><%= orang_tua.nama %></a></td>
                     <% }} %>
 
                     <% for (let orang_tua of siswa.orang_tua) {
                       if (orang_tua.tipe === "Ibu") { %>
-                    <td><%= orang_tua.nama %></td>
+                    <td><a class="text-light" href="/admin/siswa/<%= siswa._id %>"><%= orang_tua.nama %></a></td>
                     <% }} %>
 
                     <% for (let orang_tua of siswa.orang_tua) {
                       if (orang_tua.tipe === "Wali") { %>
-                    <td><%= orang_tua.nama %></td>
+                    <td><a class="text-light" href="/admin/siswa/<%= siswa._id %>"><%= orang_tua.nama %></a></td>
                     <% }} %>
 
                   </tr>

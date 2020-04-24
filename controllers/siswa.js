@@ -22,7 +22,7 @@ router.get("/siswa/:id", async (req, res) => {
             siswa: siswa
         })
     } catch (error) {
-        console.log(error);
+        res.json({ message: error.message });
     }
 })
 
