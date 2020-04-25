@@ -8,821 +8,1143 @@
     />
     <title>Daftar - SMK Wikrama 1 Garut</title>
 
-    <link
-      rel="stylesheet"
-      href="/assets/bootstrap/dist/css/bootstrap.css"
-    />
+    <link rel="stylesheet" href="/assets/bootstrap/dist/css/bootstrap.css" />
     <link rel="stylesheet" href="/assets/css/style.css" />
   </head>
   <body>
     <header>
       <nav class="navbar navbar-expand-md navbar-dark bg-dark">
-        <button class="btn btn-outline-light my-2" id="kembaliButton">
+        <a class="btn btn-outline-light my-2" id="kembaliButton" href="../">
           Kembali
-        </button>
+        </a>
       </nav>
     </header>
 
     <main>
       <section class="container-fluid bg-orange-100 py-lg-4 py-3">
-        <div class="container">
-          <div class="row">
-            <div class="col">
-
-              <form>
+        <form method="POST" action="/admin/siswa">
+          <div class="container">
+            <div class="row">
+              <div class="col">
                 <div class="accordion">
                   <div class="card">
                     <div class="card-header">
                       <h3>Data Siswa</h3>
                     </div>
                     <div class="card-body">
-                      
-    
+                      <fieldset class="form-group">
+                        <div class="row">
+                          <legend class="col-form-label col-sm-2 pt-0">
+                            Jalur Penerimaan
+                          </legend>
+                          <div class="col-sm-10">
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="jalur"
+                                id="reguler"
+                                value="false"
+                              />
+                              <label class="form-check-label" for="reguler">
+                                Reguler
+                              </label>
+                            </div>
+                            <div class="form-check">
+                              <input
+                                class="form-check-input"
+                                type="radio"
+                                name="jalur"
+                                id="beasiswa"
+                                value="true"
+                              />
+                              <label class="form-check-label" for="beasiswa">
+                                Beasiswa
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+                      </fieldset>
+                    </div>
+
+                    <div class="card-header">
+                      <a class="h5" href="#bagian1" data-toggle="collapse"
+                        >1. Data Calon Siswa</a
+                      >
+                    </div>
+                    <div class="collapse" id="bagian1">
+                      <div class="card-body">
+                        <div class="form-group row">
+                          <label
+                            for="namaLengkap"
+                            class="col-sm-2 col-form-label"
+                            >Nama Lengkap</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="namaLengkap"
+                              name="nama_lengkap"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="namaPanggilan"
+                            class="col-sm-2 col-form-label"
+                            >Nama Panggilan</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="namaPanggilan"
+                              name="nama_panggilan"
+                            />
+                          </div>
+                        </div>
+
                         <fieldset class="form-group">
                           <div class="row">
                             <legend class="col-form-label col-sm-2 pt-0">
-                              Jalur Penerimaan
+                              Jenis Kelamin
                             </legend>
                             <div class="col-sm-10">
                               <div class="form-check">
                                 <input
                                   class="form-check-input"
                                   type="radio"
-                                  name="jalur"
-                                  id="reguler"
-                                  value="false" />
-                                <label class="form-check-label" for="reguler">
-                                  Reguler
+                                  name="jk"
+                                  id="lakiLaki"
+                                  value="false"
+                                />
+                                <label class="form-check-label" for="lakiLaki">
+                                  Laki-laki
                                 </label>
                               </div>
                               <div class="form-check">
                                 <input
                                   class="form-check-input"
                                   type="radio"
-                                  name="jalur"
-                                  id="beasiswa"
-                                  value="true"/>
-                                <label class="form-check-label" for="beasiswa">
-                                  Beasiswa
+                                  name="jk"
+                                  id="perempuan"
+                                  value="true"
+                                />
+                                <label class="form-check-label" for="perempuan">
+                                  Perempuan
                                 </label>
                               </div>
                             </div>
                           </div>
                         </fieldset>
-    
-    
-    
-                
-                    </div>
-    
-                    <div class="card-header">
-                        <a class="h5" href="#bagian1" data-toggle="collapse">1. Data Calon Siswa</a>
-                    </div>
-                    <div class="collapse" id="bagian1">
-                        <div class="card-body">
-                            <div class="form-group row">
-                                <label for="namaLengkap" class="col-sm-2 col-form-label"
-                                  >Nama Lengkap</label
-                                >
-                                <div class="col-sm-10">
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="namaLengkap"
-                                    name="namaLengkap"
-                                  />
-                                </div>
-                              </div>
-              
-                              <div class="form-group row">
-                                <label for="namaPanggilan" class="col-sm-2 col-form-label"
-                                  >Nama Panggilan</label
-                                >
-                                <div class="col-sm-10">
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="namaPanggilan"
-                                    name="namaPanggilan"
-                                  />
-                                </div>
-                              </div>
-              
-                              <fieldset class="form-group">
-                                <div class="row">
-                                  <legend class="col-form-label col-sm-2 pt-0">
-                                    Jenis Kelamin
-                                  </legend>
-                                  <div class="col-sm-10">
-                                    <div class="form-check">
-                                      <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        name="jk"
-                                        id="lakiLaki"
-                                        value="false" />
-                                      <label class="form-check-label" for="lakiLaki">
-                                        Laki-laki
-                                      </label>
-                                    </div>
-                                    <div class="form-check">
-                                      <input
-                                        class="form-check-input"
-                                        type="radio"
-                                        name="jk"
-                                        id="perempuan"
-                                        value="true" />
-                                      <label class="form-check-label" for="perempuan">
-                                        Perempuan
-                                      </label>
-                                    </div>
-                                  </div>
-                                </div>
-                              </fieldset>
-              
-                              <div class="form-group row">
-                                <label for="tempatLahir" class="col-sm-2 col-form-label"
-                                  >Tempat Lahir</label
-                                >
-                                <div class="col-sm-10">
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="tempatLahir"
-                                    name="tempatLahir"
-                                  />
-                                </div>
-                              </div>
-              
-                              <div class="form-group row">
-                                <label for="tanggalLahir" class="col-sm-2 col-form-label"
-                                  >Tanggal Lahir</label
-                                >
-                                <div class="col-sm-10">
-                                  <input
-                                    class="form-control"
-                                    type="date"
-                                    name="tanggalLahir"
-                                    id="tanggalLahir"
-                                  />
-                                </div>
-                              </div>
-              
-                              <div class="form-group row">
-                                <label for="agama" class="col-sm-2 col-form-label"
-                                  >Agama</label
-                                >
-                                <div class="col-sm-10">
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="agama"
-                                    name="agama"
-                                  />
-                                </div>
-                              </div>
-              
-                              <div class="form-group row">
-                                <label for="citaCita" class="col-sm-2 col-form-label"
-                                  >Cita-cita</label
-                                >
-                                <div class="col-sm-10">
-                                  <input
-                                    type="text"
-                                    class="form-control"
-                                    id="citaCita"
-                                    name="citaCita"
-                                  />
-                                </div>
-                              </div>   
-                              
-                              <div class="form-group row">
-                                  <label for="hobi" class="col-sm-2 col-form-label"
-                                    >Hobi</label
-                                  >
-                                  <div class="col-sm-10">
-                                    <input
-                                      type="text"
-                                      class="form-control"
-                                      id="hobi"
-                                      name="hobi"
-                                    />
-                                  </div>
-                                </div>
-              
-                                <div class="form-group row">
-                                  <label for="anakKe" class="col-sm-2 col-form-label"
-                                    >Anak-ke</label
-                                  >
-                                  <div class="col-sm-10">
-                                    <input
-                                      type="number"
-                                      class="form-control"
-                                      id="anakKe"
-                                      name="anakKe"
-                                    />
-                                  </div>
-                                </div>
-              
-                                <div class="form-group row">
-                                  <label for="jumlahSaudara" class="col-sm-2 col-form-label"
-                                    >Jumlah Saudara</label
-                                  >
-                                  <div class="col">
-                                    <input
-                                      type="number"
-                                      class="form-control"
-                                      id="saudaraKandung"
-                                      name="saudaraKandung"
-                                      placeholder="Kandung"
-                                    />
-                                  </div>
-              
-                                  <div class="col">
-                                      <input
-                                          type="number"
-                                          class="form-control"
-                                          id="saudaraTiri"
-                                          name="saudaraTiri"
-                                          placeholder="Tiri"
-                                      />
-                                  </div>
-              
-                                  <div class="col">
-                                      <input
-                                          type="number"
-                                          class="form-control"
-                                          id="saudaraAngkat"
-                                          name="saudaraAngkat"
-                                          placeholder="Angkat"
-                                      />
-                                  </div>
-                                </div>
-              
-                                <div class="form-group row">
-                                  <label for="beratBadan" class="col-sm-2 col-form-label"
-                                    >Berat Badan</label
-                                  >
-                                  <div class="col-sm-10">
-                                    <input
-                                      type="number"
-                                      class="form-control"
-                                      id="beratBadan"
-                                      name="beratBadan"
-                                    />
-                                  </div>
-                                </div>
-              
-                                <div class="form-group row">
-                                  <label for="tinggiBadan" class="col-sm-2 col-form-label"
-                                    >Tinggi Badan</label
-                                  >
-                                  <div class="col-sm-10">
-                                    <input
-                                      type="number"
-                                      class="form-control"
-                                      id="tinggiBadan"
-                                      name="tinggiBadan"
-                                    />
-                                  </div>
-                                </div>
-                                
-                                <div class="form-group row">
-                                  <label for="golDarah" class="col-sm-2 col-form-label"
-                                    >Gol. Darah</label
-                                  >
-                                  <div class="col-sm-10">
-                                      <select class="custom-select" name="golDarah" id="golDarah">
-                                          <option value="A"
-                                          >A</option>
-                                          <option value="B"
-                                          >B</option>
-                                          <option value="O"
-                                          >O</option>
-                                          <option value="AB"
-                                          >AB</option>
-                                      </select>
-                                  </div>
-                                </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="tempatLahir"
+                            class="col-sm-2 col-form-label"
+                            >Tempat Lahir</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="tempatLahir"
+                              name="tempat_lahir"
+                            />
+                          </div>
                         </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="tanggalLahir"
+                            class="col-sm-2 col-form-label"
+                            >Tanggal Lahir</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              class="form-control"
+                              type="date"
+                              name="tanggal_lahir"
+                              id="tanggal_lahir"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="agama" class="col-sm-2 col-form-label"
+                            >Agama</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="agama"
+                              name="agama"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="citaCita" class="col-sm-2 col-form-label"
+                            >Cita-cita</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="citaCita"
+                              name="cita_cita"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="hobi" class="col-sm-2 col-form-label"
+                            >Hobi</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="hobi"
+                              name="hobi"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="anakKe" class="col-sm-2 col-form-label"
+                            >Anak-ke</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="anakKe"
+                              name="anak_ke"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="jumlahSaudara"
+                            class="col-sm-2 col-form-label"
+                            >Jumlah Saudara</label
+                          >
+                          <div class="col">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="saudaraKandung"
+                              name="kandung"
+                              placeholder="Kandung"
+                            />
+                          </div>
+
+                          <div class="col">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="saudaraTiri"
+                              name="tiri"
+                              placeholder="Tiri"
+                            />
+                          </div>
+
+                          <div class="col">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="saudaraAngkat"
+                              name="angkat"
+                              placeholder="Angkat"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="beratBadan"
+                            class="col-sm-2 col-form-label"
+                            >Berat Badan</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="beratBadan"
+                              name="berat_badan"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="tinggiBadan"
+                            class="col-sm-2 col-form-label"
+                            >Tinggi Badan</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="tinggiBadan"
+                              name="tinggi_badan"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="golDarah" class="col-sm-2 col-form-label"
+                            >Gol. Darah</label
+                          >
+                          <div class="col-sm-10">
+                            <select
+                              class="custom-select"
+                              name="gol_darah"
+                              id="golDarah"
+                            >
+                              <option value="A">A</option>
+                              <option value="B">B</option>
+                              <option value="O">O</option>
+                              <option value="AB">AB</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-    
-    
+
                     <div class="card-header">
-                      <a class="h5" href="#bagian2" data-toggle="collapse">2. Keterangan Tempat Tinggal</a>
+                      <a class="h5" href="#bagian2" data-toggle="collapse"
+                        >2. Keterangan Tempat Tinggal</a
+                      >
                     </div>
                     <div class="collapse" id="bagian2">
                       <div class="card-body">
                         <div class="form-group row">
-                            <label for="alamat" class="col-sm-2 col-form-label"
-                              >Alamat</label
-                            >
-                            <div class="col-sm-10">
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="alamat"
-                                name="alamat"
-                              />
-                            </div>
+                          <label for="alamat" class="col-sm-2 col-form-label"
+                            >Alamat</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="alamat"
+                              name="alamat"
+                            />
                           </div>
-        
-                          <div class="form-group row">
-                            <label for="kelurahan" class="col-sm-2 col-form-label"
-                              >Kelurahan</label
-                            >
-                            <div class="col-sm-10">
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="kelurahan"
-                                name="kelurahan"
-                              />
-                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="kelurahan" class="col-sm-2 col-form-label"
+                            >Kelurahan</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="kelurahan"
+                              name="kelurahan"
+                            />
                           </div>
-        
-                          <div class="form-group row">
-                            <label for="kecamatan" class="col-sm-2 col-form-label"
-                              >Kecamatan</label
-                            >
-                            <div class="col-sm-10">
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="kecamatan"
-                                name="kecamatan"
-                              />
-                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="kecamatan" class="col-sm-2 col-form-label"
+                            >Kecamatan</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="kecamatan"
+                              name="kecamatan"
+                            />
                           </div>
-        
-                          <div class="form-group row">
-                            <label for="kota" class="col-sm-2 col-form-label"
-                              >Kota</label
-                            >
-                            <div class="col-sm-10">
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="kota"
-                                name="kota"
-                              />
-                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="kota" class="col-sm-2 col-form-label"
+                            >Kota</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="kota"
+                              name="kota"
+                            />
                           </div>
-        
-                          <div class="form-group row">
-                            <label for="provinsi" class="col-sm-2 col-form-label"
-                              >Provinsi</label
-                            >
-                            <div class="col-sm-10">
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="provinsi"
-                                name="provinsi"
-                              />
-                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="provinsi" class="col-sm-2 col-form-label"
+                            >Provinsi</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="provinsi"
+                              name="provinsi"
+                            />
                           </div>
-        
-                          <div class="form-group row">
-                            <label for="kode_pos" class="col-sm-2 col-form-label"
-                              >Kode Pos</label
-                            >
-                            <div class="col-sm-10">
-                              <input
-                                type="number"
-                                class="form-control"
-                                id="kode_pos"
-                                name="kode_pos"
-                              />
-                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="kode_pos" class="col-sm-2 col-form-label"
+                            >Kode Pos</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="kode_pos"
+                              name="kode_pos"
+                            />
                           </div>
-        
-                          <div class="form-group row">
-                            <label for="no_telp_rumah" class="col-sm-2 col-form-label"
-                              >No. Telpon Rumah</label
-                            >
-                            <div class="col-sm-10">
-                              <input
-                                type="number"
-                                class="form-control"
-                                id="no_telp_rumah"
-                                name="no_telp_rumah"
-                              />
-                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="no_telp_rumah"
+                            class="col-sm-2 col-form-label"
+                            >No. Telpon Rumah</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="no_telp_rumah"
+                              name="no_telp_rumah"
+                            />
                           </div>
-        
-                          <div class="form-group row">
-                            <label for="email" class="col-sm-2 col-form-label"
-                              >Email</label
-                            >
-                            <div class="col-sm-10">
-                              <input
-                                type="email"
-                                class="form-control"
-                                id="email"
-                                name="email"
-                              />
-                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="email" class="col-sm-2 col-form-label"
+                            >Email</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="email"
+                              name="email"
+                            />
                           </div>
-        
-                          <fieldset class="form-group">
-                            <div class="row">
-                              <legend class="col-form-label col-sm-2 pt-0">
-                                Tinggal Dengan
-                              </legend>
-                              <div class="col-sm-10">
-        
-                                <div class="form-check">
-                                  <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="tinggalDengan"
-                                    id="Orang Tua"
-                                    value="Orang Tua"/>
-                                  <label class="form-check-label" for="Orang Tua">
-                                    Orang Tua
-                                  </label>
-                                </div>
-        
-                                <div class="form-check">
-                                  <input
-                                    class="form-check-input"
-                                    type="radio"
-                                    name="tinggalDengan"
-                                    id="asrama"
-                                    value="Asrama"
-                                      />
-                                  <label class="form-check-label" for="asrama">
-                                    Asrama
-                                  </label>
-                                </div>
-        
-                                <div class="form-check">
-                                    <input
-                                      class="form-check-input"
-                                      type="radio"
-                                      name="tinggalDengan"
-                                      id="saudara"
-                                      value="Saudara"
-                                        />
-                                    <label class="form-check-label" for="saudara">
-                                      Saudara
-                                    </label>
-                                </div>
-        
+                        </div>
+
+                        <fieldset class="form-group">
+                          <div class="row">
+                            <legend class="col-form-label col-sm-2 pt-0">
+                              Tinggal Dengan
+                            </legend>
+                            <div class="col-sm-10">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="radio"
+                                  name="tinggal_dengan"
+                                  id="Orang Tua"
+                                  value="Orang Tua"
+                                />
+                                <label class="form-check-label" for="Orang Tua">
+                                  Orang Tua
+                                </label>
+                              </div>
+
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="radio"
+                                  name="tinggal_dengan"
+                                  id="asrama"
+                                  value="Asrama"
+                                />
+                                <label class="form-check-label" for="asrama">
+                                  Asrama
+                                </label>
+                              </div>
+
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="radio"
+                                  name="tinggal_dengan"
+                                  id="saudara"
+                                  value="Saudara"
+                                />
+                                <label class="form-check-label" for="saudara">
+                                  Saudara
+                                </label>
                               </div>
                             </div>
-                          </fieldset>
+                          </div>
+                        </fieldset>
+                      </div>
                     </div>
-                    </div>
-    
-    
+
                     <div class="card-header">
-                      <a class="h5" href="#bagian3" data-toggle="collapse">3. Keterangan Kesehatan</a>
+                      <a class="h5" href="#bagian3" data-toggle="collapse"
+                        >3. Keterangan Kesehatan</a
+                      >
                     </div>
                     <div class="collapse" id="bagian3">
                       <div class="card-body">
                         <fieldset class="form-group">
-                            <div class="row">
-                              <legend class="col-form-label col-sm-2 pt-0">
-                                Penyakit yang pernah diderita
-                              </legend>
-                              <div class="col-sm-10">
-        
-                                <div class="form-check">
-                                  <input
-                                    class="form-check-input"
-                                    type="checkbox"
-                                    name="tbc"
-                                    id="tbc"
-                                      />
-                                  <label class="form-check-label" for="tbc">
-                                    TBC
-                                  </label>
-                                </div>
-        
-                                <div class="form-check">
-                                    <input
-                                      class="form-check-input"
-                                      type="checkbox"
-                                      name="malaria"
-                                      id="malaria"
-                                        />
-                                    <label class="form-check-label" for="malaria">
-                                      Malaria
-                                    </label>
-                                  </div>
-        
-                                  <div class="form-check">
-                                    <input
-                                      class="form-check-input"
-                                      type="checkbox"
-                                      name="chotipa"
-                                      id="chotipa"
-                                         />
-                                    <label class="form-check-label" for="chotipa">
-                                      Chotipa
-                                    </label>
-                                  </div>
-                                  
-                                  <div class="form-check">
-                                    <input
-                                      class="form-check-input"
-                                      type="checkbox"
-                                      name="cacar"
-                                      id="cacar"
-                                         />
-                                    <label class="form-check-label" for="cacar">
-                                      Cacar
-                                    </label>
-                                  </div>
-        
+                          <div class="row">
+                            <legend class="col-form-label col-sm-2 pt-0">
+                              Penyakit yang pernah diderita
+                            </legend>
+                            <div class="col-sm-10">
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  name="tbc"
+                                  id="tbc"
+                                />
+                                <label class="form-check-label" for="tbc">
+                                  TBC
+                                </label>
+                              </div>
+
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  name="malaria"
+                                  id="malaria"
+                                />
+                                <label class="form-check-label" for="malaria">
+                                  Malaria
+                                </label>
+                              </div>
+
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  name="chotipa"
+                                  id="chotipa"
+                                />
+                                <label class="form-check-label" for="chotipa">
+                                  Chotipa
+                                </label>
+                              </div>
+
+                              <div class="form-check">
+                                <input
+                                  class="form-check-input"
+                                  type="checkbox"
+                                  name="cacar"
+                                  id="cacar"
+                                />
+                                <label class="form-check-label" for="cacar">
+                                  Cacar
+                                </label>
                               </div>
                             </div>
-                          </fieldset>
-        
-                          <div class="form-group row">
-                            <label for="lainnya" class="col-sm-2 col-form-label"
-                              >Lainnya</label
-                            >
-                            <div class="col-sm-10">
-                              <input
-                                type="text"
-                                class="form-control"
-                                id="lainnya"
-                                name="lainnya"
-                              />
-                            </div>
                           </div>
+                        </fieldset>
+
+                        <div class="form-group row">
+                          <label for="lainnya" class="col-sm-2 col-form-label"
+                            >Lainnya</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="lainnya"
+                              name="lainnya"
+                            />
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    </div>
-    
-    
+
                     <div class="card-header">
-                      <a class="h5" href="#bagian4" data-toggle="collapse">4. Data Orang Tua/Wali</a>
+                      <a class="h5" href="#bagian4" data-toggle="collapse"
+                        >4. Data Orang Tua/Wali</a
+                      >
                     </div>
                     <div class="collapse" id="bagian4">
                       <div class="card-body">
-      
-                          <h6 class="mt-4">Ayah</h6>
-                          <hr />
-                        
-                          <div class="form-group row">
-                              <label for="orangTuaNama" class="col-sm-2 col-form-label"
-                                >Nama</label
-                              >
-                              <div class="col-sm-10">
-                                <input
-                                  type="text"
-                                  class="form-control"
-                                  id="orangTuaNama"
-                                  name="orangTuaNama"
-                                />
-                              </div>
-                            </div>
-      
-                            <div class="form-group row">
-                              <label for="orangTuaTempatLahir" class="col-sm-2 col-form-label"
-                                >Tempat Lahir</label
-                              >
-                              <div class="col-sm-10">
-                                <input
-                                  type="text"
-                                  class="form-control"
-                                  id="orangTuaTempatLahir"
-                                  name="orangTuaTempatLahir"
-                                />
-                              </div>
-                            </div>
-      
-                            <div class="form-group row">
-                              <label for="orangTuaTanggalLahir" class="col-sm-2 col-form-label"
-                                >Tanggal Lahir</label
-                              >
-                              <div class="col-sm-10">
-                                <input
-                                  type="date"
-                                  class="form-control"
-                                  id="orangTuaTanggalLahir"
-                                  name="orangTuaTanggalLahir"
-                                />
-                              </div>
-                            </div>
-      
-                            <div class="form-group row">
-                              <label for="orangTuaPekerjaan" class="col-sm-2 col-form-label"
-                                >Pekerjaan</label
-                              >
-                              <div class="col-sm-10">
-                                <input
-                                  type="text"
-                                  class="form-control"
-                                  id="orangTuaPekerjaan"
-                                  name="orangTuaPekerjaan"
-                                />
-                              </div>
-                            </div>
-      
-                            <div class="form-group row">
-                              <label for="orangTuaPendidikan" class="col-sm-2 col-form-label"
-                                >Pendidikan</label
-                              >
-                              <div class="col-sm-10">
-                                <input
-                                  type="text"
-                                  class="form-control"
-                                  id="orangTuaPendidikan"
-                                  name="orangTuaPendidikan"
-                                />
-                              </div>
-                            </div>
-      
-                            <div class="form-group row">
-                              <label for="orangTuaKewarganegaraan" class="col-sm-2 col-form-label"
-                                >Kewarganegaraan</label
-                              >
-                              <div class="col-sm-10">
-                                <input
-                                  type="text"
-                                  class="form-control"
-                                  id="orangTuaKewarganegaraan"
-                                  name="orangTuaKewarganegaraan"
-                                />
-                              </div>
-                            </div>
-      
-                              <div class="form-group row">
-                              <label for="orangTuaAgama" class="col-sm-2 col-form-label"
-                                >Agama</label
-                              >
-                              <div class="col-sm-10">
-                                <input
-                                  type="text"
-                                  class="form-control"
-                                  id="orangTuaAgama"
-                                  name="orangTuaAgama"
-                                />
-                              </div>
-                            </div>
-      
-                            <div class="form-group row">
-                              <label for="orangTuaNoHP" class="col-sm-2 col-form-label"
-                                >No. Handphone</label
-                              >
-                              <div class="col-sm-10">
-                                <input
-                                  type="number"
-                                  class="form-control"
-                                  id="orangTuaNoHP"
-                                  name="orangTuaNoHP"
-                                />
-                              </div>
-                            </div>
-      
-                            
-                            <div class="form-group row">
-                              <label for="orangTuaNoWA" class="col-sm-2 col-form-label"
-                                >No. Whatsapp</label
-                              >
-                              <div class="col-sm-10">
-                                <input
-                                  type="number"
-                                  class="form-control"
-                                  id="orangTuaNoWA"
-                                  name="orangTuaNoWA"
-                                />
-                              </div>
-                            </div>
-      
-                          <div class="form-group row">
-                              <label for="waliEmail" class="col-sm-2 col-form-label"
-                                >Email</label
-                              >
-                              <div class="col-sm-10">
-                                <input
-                                  type="email"
-                                  class="form-control"
-                                  id="waliEmail"
-                                  name="waliEmail"
-                                />
-                              </div>
-                            </div>
-      
-                            <div class="form-group row">
-                              <label for="waliHubungan" class="col-sm-2 col-form-label"
-                                >Hubungan</label
-                              >
-                              <div class="col-sm-10">
-                                <input
-                                  type="email"
-                                  class="form-control"
-                                  id="waliHubungan"
-                                  name="waliHubungan"
-                                />
-                              </div>
-                            </div>
+                        <h6 class="mt-4">Ayah</h6>
+                        <hr />
+
+                        <div class="form-group row">
+                          <label for="ayah_nama" class="col-sm-2 col-form-label"
+                            >Nama</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="ayah_nama"
+                              name="ayah_nama"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="ayah_tempat_lahir"
+                            class="col-sm-2 col-form-label"
+                            >Tempat Lahir</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="ayah_tempat_lahir"
+                              name="ayah_tempat_lahir"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="ayah_tanggal_lahir"
+                            class="col-sm-2 col-form-label"
+                            >Tanggal Lahir</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="date"
+                              class="form-control"
+                              id="ayah_tanggal_lahir"
+                              name="ayah_tanggal_lahir"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="ayah_pekerjaan"
+                            class="col-sm-2 col-form-label"
+                            >Pekerjaan</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="ayah_pekerjaan"
+                              name="ayah_pekerjaan"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="ayah_pendidikan"
+                            class="col-sm-2 col-form-label"
+                            >Pendidikan</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="ayah_pendidikan"
+                              name="ayah_pendidikan"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="ayah_kewarganegaraan"
+                            class="col-sm-2 col-form-label"
+                            >Kewarganegaraan</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="ayah_kewarganegaraan"
+                              name="ayah_kewarganegaraan"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="ayah_agama"
+                            class="col-sm-2 col-form-label"
+                            >Agama</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="ayah_agama"
+                              name="ayah_agama"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="ayah_no_hp"
+                            class="col-sm-2 col-form-label"
+                            >No. Handphone</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="ayah_no_hp"
+                              name="ayah_no_hp"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="ayah_no_wa"
+                            class="col-sm-2 col-form-label"
+                            >No. Whatsapp</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="ayah_no_wa"
+                              name="ayah_no_wa"
+                            />
+                          </div>
+                        </div>
+
+                        <h6 class="mt-4">Ibu</h6>
+                        <hr />
+
+                        <div class="form-group row">
+                          <label for="ibu_nama" class="col-sm-2 col-form-label"
+                            >Nama</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="ibu_nama"
+                              name="ibu_nama"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="ibu_tempat_lahir"
+                            class="col-sm-2 col-form-label"
+                            >Tempat Lahir</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="ibu_tempat_lahir"
+                              name="ibu_tempat_lahir"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="ibu_tanggal_lahir"
+                            class="col-sm-2 col-form-label"
+                            >Tanggal Lahir</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="date"
+                              class="form-control"
+                              id="ibu_tanggal_lahir"
+                              name="ibu_tanggal_lahir"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="ibu_pekerjaan"
+                            class="col-sm-2 col-form-label"
+                            >Pekerjaan</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="ibu_pekerjaan"
+                              name="ibu_pekerjaan"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="ibu_pendidikan"
+                            class="col-sm-2 col-form-label"
+                            >Pendidikan</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="ibu_pendidikan"
+                              name="ibu_pendidikan"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="ibu_kewarganegaraan"
+                            class="col-sm-2 col-form-label"
+                            >Kewarganegaraan</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="ibu_kewarganegaraan"
+                              name="ibu_kewarganegaraan"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="ibu_agama" class="col-sm-2 col-form-label"
+                            >Agama</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="ibu_agama"
+                              name="ibu_agama"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="ibu_no_hp" class="col-sm-2 col-form-label"
+                            >No. Handphone</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="ibu_no_hp"
+                              name="ibu_no_hp"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label for="ibu_no_wa" class="col-sm-2 col-form-label"
+                            >No. Whatsapp</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="ibu_no_wa"
+                              name="ibu_no_wa"
+                            />
+                          </div>
+                        </div>
+
+                        <h6 class="mt-4">Wali</h6>
+                        <hr />
+
+                        <div class="form-group row">
+                          <label for="wali_nama" class="col-sm-2 col-form-label"
+                            >Nama</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="wali_nama"
+                              name="wali_nama"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="wali_tempat_lahir"
+                            class="col-sm-2 col-form-label"
+                            >Tempat Lahir</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="wali_tempat_lahir"
+                              name="wali_tempat_lahir"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="wali_tanggal_lahir"
+                            class="col-sm-2 col-form-label"
+                            >Tanggal Lahir</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="date"
+                              class="form-control"
+                              id="wali_tanggal_lahir"
+                              name="wali_tanggal_lahir"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="wali_pekerjaan"
+                            class="col-sm-2 col-form-label"
+                            >Pekerjaan</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="wali_pekerjaan"
+                              name="wali_pekerjaan"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="wali_pendidikan"
+                            class="col-sm-2 col-form-label"
+                            >Pendidikan</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="wali_pendidikan"
+                              name="wali_pendidikan"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="wali_kewarganegaraan"
+                            class="col-sm-2 col-form-label"
+                            >Kewarganegaraan</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="wali_kewarganegaraan"
+                              name="wali_kewarganegaraan"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="wali_agama"
+                            class="col-sm-2 col-form-label"
+                            >Agama</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="text"
+                              class="form-control"
+                              id="wali_agama"
+                              name="wali_agama"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="wali_no_hp"
+                            class="col-sm-2 col-form-label"
+                            >No. Handphone</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="wali_no_hp"
+                              name="wali_no_hp"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="wali_no_wa"
+                            class="col-sm-2 col-form-label"
+                            >No. Whatsapp</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="number"
+                              class="form-control"
+                              id="wali_no_wa"
+                              name="wali_no_wa"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="wali_email"
+                            class="col-sm-2 col-form-label"
+                            >Email</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="wali_email"
+                              name="wali_email"
+                            />
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label
+                            for="wali_hubungan"
+                            class="col-sm-2 col-form-label"
+                            >Hubungan</label
+                          >
+                          <div class="col-sm-10">
+                            <input
+                              type="email"
+                              class="form-control"
+                              id="wali_hubungan"
+                              name="wali_hubungan"
+                            />
+                          </div>
+                        </div>
                       </div>
                     </div>
-    
-    
+
                     <div class="card-header">
-                      <a class="h5" href="#bagian5" data-toggle="collapse">5. Nilai Rapor</a>
+                      <a class="h5" href="#bagian5" data-toggle="collapse"
+                        >5. Nilai Rapor</a
+                      >
                     </div>
                     <div class="collapse" id="bagian5">
                       <div class="card-body">
-                        <table class="table table-dark table-bordered table-hover">
-                            <thead class="text-center">
-                                <tr>
-                                    <td rowspan="2">No.</td>
-                                    <td rowspan="2">Mata Pelajaran</td>
-                                    <td colspan="2">Kelas 7</td>
-                                    <td colspan="2">Kelas 8</td>
-                                    <td>Kelas 9</td>
-                                </tr>
-                                <tr>
-                                    <td>Semester 1</td>
-                                    <td>Semester 2</td>
-                                    <td>Semester 1</td>
-                                    <td>Semester 2</td>
-                                    <td>Semester 1</td>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                
-                                <tr>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                </tr>
-    
-                                <tr>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                </tr>
-    
-                                <tr>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                </tr>
-    
-                                <tr>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                </tr>
-    
-                                <tr>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                    <td>Aku Lucu</td>
-                                </tr>
-    
-                            </tbody>
+                        <table
+                          class="table table-dark table-bordered table-hover table-responsive"
+                        >
+                          <thead class="text-center">
+                            <tr>
+                              <td rowspan="2">No.</td>
+                              <td rowspan="2">Mata Pelajaran</td>
+                              <td colspan="2">Kelas 7</td>
+                              <td colspan="2">Kelas 8</td>
+                              <td>Kelas 9</td>
+                            </tr>
+                            <tr>
+                              <td>Semester 1</td>
+                              <td>Semester 2</td>
+                              <td>Semester 1</td>
+                              <td>Semester 2</td>
+                              <td>Semester 1</td>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                            </tr>
+
+                            <tr>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                            </tr>
+
+                            <tr>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                            </tr>
+
+                            <tr>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                            </tr>
+
+                            <tr>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                              <td>Aku Lucu</td>
+                            </tr>
+                          </tbody>
                         </table>
-    
+
                         <div class="form-group row">
-                            <label for="prestasi" class="col-sm-2 col-form-label"
-                              >Prestasi yang pernah diraih</label
+                          <label for="prestasi" class="col-sm-2 col-form-label"
+                            >Prestasi yang pernah diraih</label
+                          >
+                          <div class="col-sm-10">
+                            <textarea
+                              name="prestasi"
+                              id="prestasi"
+                              cols="50"
+                              rows="10"
                             >
-                            <div class="col-sm-10">
-                                <textarea name="prestasi" id="prestasi" cols="50" rows="10"
-                                >
-                              </textarea>
-                            </div>
+                            </textarea>
                           </div>
+                        </div>
+                      </div>
                     </div>
-                    </div>
-    
-    
                   </div>
                 </div>
-                </form>
+              </div>
+            </div>
 
+            <div class="row my-5">
+              <div class="col text-center">
+                <button class="btn-lg btn-dark" type="submit">Daftar!</button>
+              </div>
             </div>
           </div>
-        </div>
+        </form>
       </section>
     </main>
 

@@ -28,15 +28,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#profil">Profil</a>
+              <a class="nav-link" href="#">Siswa</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#tentang">Tentang</a>
+              <a class="nav-link" href="#">Lainnya</a>
             </li>
           </ul>
-          <button class="btn btn-outline-light my-2" id="daftarButton">
+          <a class="btn btn-outline-light my-2" id="daftarButton" href="../../">
             Logout
-          </button>
+          </a>
         </div>
       </nav>
     </header>
@@ -50,7 +50,7 @@
           <div class="row">
             <div class="col" id="mainCol">
 
-            <form>
+            <form method="POST">
             <div class="accordion">
               <div class="card">
                 <div class="card-header">
@@ -116,7 +116,7 @@
                                 type="text"
                                 class="form-control"
                                 id="namaLengkap"
-                                name="namaLengkap"
+                                name="nama_lengkap"
                                 value="<%= siswa.data_siswa.nama_lengkap %>"
                               />
                             </div>
@@ -131,7 +131,7 @@
                                 type="text"
                                 class="form-control"
                                 id="namaPanggilan"
-                                name="namaPanggilan"
+                                name="nama_panggilan"
                                 value="<%= siswa.data_siswa.nama_panggilan %>"
                               />
                             </div>
@@ -184,7 +184,7 @@
                                 type="text"
                                 class="form-control"
                                 id="tempatLahir"
-                                name="tempatLahir"
+                                name="tempat_lahir"
                                 value="<%= siswa.data_siswa.ttl.tempat_lahir %>"
                               />
                             </div>
@@ -199,7 +199,7 @@
                                 class="form-control"
                                 type="date"
                                 name="tanggalLahir"
-                                id="tanggalLahir"
+                                id="tanggal_lahir"
                                 value="<%= Date(siswa.data_siswa.ttl.tanggal_lahir) %>"
                               />
                             </div>
@@ -229,7 +229,7 @@
                                 type="text"
                                 class="form-control"
                                 id="citaCita"
-                                name="citaCita"
+                                name="cita_cita"
                                 value="<%= siswa.data_siswa.cita_cita %>"
                               />
                             </div>
@@ -259,7 +259,7 @@
                                   type="number"
                                   class="form-control"
                                   id="anakKe"
-                                  name="anakKe"
+                                  name="anak_ke"
                                   value="<%= siswa.data_siswa.anak_ke %>"
                                 />
                               </div>
@@ -274,7 +274,7 @@
                                   type="number"
                                   class="form-control"
                                   id="saudaraKandung"
-                                  name="saudaraKandung"
+                                  name="kandung"
                                   placeholder="Kandung"
                                   value="<%= siswa.data_siswa.jumlah_saudara.kandung %>"
                                 />
@@ -285,7 +285,7 @@
                                       type="number"
                                       class="form-control"
                                       id="saudaraTiri"
-                                      name="saudaraTiri"
+                                      name="tiri"
                                       placeholder="Tiri"
                                       value="<%= siswa.data_siswa.jumlah_saudara.tiri %>"
                                   />
@@ -296,7 +296,7 @@
                                       type="number"
                                       class="form-control"
                                       id="saudaraAngkat"
-                                      name="saudaraAngkat"
+                                      name="angkat"
                                       placeholder="Angkat"
                                       value="<%= siswa.data_siswa.jumlah_saudara.angkat %>"
                                   />
@@ -312,7 +312,7 @@
                                   type="number"
                                   class="form-control"
                                   id="beratBadan"
-                                  name="beratBadan"
+                                  name="berat_badan"
                                   value="<%= siswa.data_siswa.berat_badan %>"
                                 />
                               </div>
@@ -327,7 +327,7 @@
                                   type="number"
                                   class="form-control"
                                   id="tinggiBadan"
-                                  name="tinggiBadan"
+                                  name="tinggi_badan"
                                   value="<%= siswa.data_siswa.tinggi_badan %>"
                                 />
                               </div>
@@ -338,7 +338,7 @@
                                 >Gol. Darah</label
                               >
                               <div class="col-sm-10">
-                                  <select class="custom-select" name="golDarah" id="golDarah">
+                                  <select class="custom-select" name="gol_darah" id="golDarah">
                                       <option value="A"
                                       <% if (siswa.data_siswa.gol_darah=="A") { %>
                                       selected 
@@ -498,7 +498,7 @@
                               <input
                                 class="form-check-input"
                                 type="radio"
-                                name="tinggalDengan"
+                                name="tinggal_dengan"
                                 id="Orang Tua"
                                 value="Orang Tua"
                                 <% if (siswa.tempat_tinggal.tinggal_dengan === "Orang Tua") { %>
@@ -513,7 +513,7 @@
                               <input
                                 class="form-check-input"
                                 type="radio"
-                                name="tinggalDengan"
+                                name="tinggal_dengan"
                                 id="asrama"
                                 value="Asrama"
                                 <% if (siswa.tempat_tinggal.tinggal_dengan === "Asrama") { %>
@@ -528,7 +528,7 @@
                                 <input
                                   class="form-check-input"
                                   type="radio"
-                                  name="tinggalDengan"
+                                  name="tinggal_dengan"
                                   id="saudara"
                                   value="Saudara"
                                   <% if (siswa.tempat_tinggal.tinggal_dengan === "Saudara") { %>
@@ -655,7 +655,7 @@
                               type="text"
                               class="form-control"
                               id="orangTuaNama"
-                              name="orangTuaNama"
+                              name="<%= orang_tua.tipe.toLowerCase() %>_nama"
                               value="<%= orang_tua.nama %>"
                             />
                           </div>
@@ -670,7 +670,7 @@
                               type="text"
                               class="form-control"
                               id="orangTuaTempatLahir"
-                              name="orangTuaTempatLahir"
+                              name="<%= orang_tua.tipe.toLowerCase() %>_tempat_lahir"
                               value="<%= orang_tua.ttl.tempat_lahir %>"
                             />
                           </div>
@@ -685,7 +685,7 @@
                               type="date"
                               class="form-control"
                               id="orangTuaTanggalLahir"
-                              name="orangTuaTanggalLahir"
+                              name="<%= orang_tua.tipe.toLowerCase() %>_tanggal_lahir"
                               value="<%= orang_tua.ttl.tanggal_lahir %>"
                             />
                           </div>
@@ -700,7 +700,7 @@
                               type="text"
                               class="form-control"
                               id="orangTuaPekerjaan"
-                              name="orangTuaPekerjaan"
+                              name="<%= orang_tua.tipe.toLowerCase() %>_pekerjaan"
                               value="<%= orang_tua.pekerjaan %>"
                             />
                           </div>
@@ -715,7 +715,7 @@
                               type="text"
                               class="form-control"
                               id="orangTuaPendidikan"
-                              name="orangTuaPendidikan"
+                              name="<%= orang_tua.tipe.toLowerCase() %>_pendidikan"
                               value="<%= orang_tua.pendidikan %>"
                             />
                           </div>
@@ -730,7 +730,7 @@
                               type="text"
                               class="form-control"
                               id="orangTuaKewarganegaraan"
-                              name="orangTuaKewarganegaraan"
+                              name="<%= orang_tua.tipe.toLowerCase() %>_kewarganegaraan"
                               value="<%= orang_tua.kewarganegaraan %>"
                             />
                           </div>
@@ -745,7 +745,7 @@
                               type="text"
                               class="form-control"
                               id="orangTuaAgama"
-                              name="orangTuaAgama"
+                              name="<%= orang_tua.tipe.toLowerCase() %>_agama"
                               value="<%= orang_tua.agama %>"
                             />
                           </div>
@@ -760,7 +760,7 @@
                               type="number"
                               class="form-control"
                               id="orangTuaNoHP"
-                              name="orangTuaNoHP"
+                              name="<%= orang_tua.tipe.toLowerCase() %>_no_hp"
                               value="<%= orang_tua.no.no_hp %>"
                             />
                           </div>
@@ -776,7 +776,7 @@
                               type="number"
                               class="form-control"
                               id="orangTuaNoWA"
-                              name="orangTuaNoWA"
+                              name="<%= orang_tua.tipe.toLowerCase() %>_no_wa"
                               value="<%= orang_tua.no.no_wa %>"
                             />
                           </div>
@@ -792,7 +792,7 @@
                               type="email"
                               class="form-control"
                               id="waliEmail"
-                              name="waliEmail"
+                              name="<%= orang_tua.tipe.toLowerCase() %>_email"
                               value="<%= orang_tua.no.email %>"
                             />
                           </div>
@@ -807,7 +807,7 @@
                               type="email"
                               class="form-control"
                               id="waliHubungan"
-                              name="waliHubungan"
+                              name="<%= orang_tua.tipe.toLowerCase() %>_hubungan"
                               value="<%= orang_tua.no.hubungan %>"
                             />
                           </div>
@@ -909,10 +909,19 @@
 
               </div>
             </div>
+
+            <div class="row my-5">
+              <div class="col text-center">
+                <button class="btn-lg btn-dark" id="update">Update</button>
+                <button class="btn-lg btn-danger" id="delete">Delete</button>
+              </div>
+            </div>
+            
             </form>
 
             </div>
           </div>
+
         </div>
       </section>
     </main>
@@ -926,5 +935,7 @@
     <script src="/assets/jquery/dist/jquery.js"></script>
     <script src="/assets/@popperjs/core/dist/umd/popper.js"></script>
     <script src="/assets/bootstrap/dist/js/bootstrap.js"></script>
+
+    <script src="/assets/js/siswa/main.js"></script>
   </body>
 </html>

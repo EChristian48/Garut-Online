@@ -21,10 +21,12 @@
   "homepage": "https://github.com/EChristian48/Garut-Online#readme",
   "dependencies": {
     "@popperjs/core": "^2.3.3",
+    "body-parser": "^1.19.0",
     "bootstrap": "^4.4.1",
     "cors": "^2.8.5",
     "ejs": "^3.1.2",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "jquery": "^3.4.1",
     "mongoose": "^5.9.10",
     "regenerator-runtime": "^0.13.3"

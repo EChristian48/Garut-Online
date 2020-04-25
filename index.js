@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const path = require("path");
+const bodyparser = require("body-parser");
 
 const siswaController = require("./controllers/siswa");
 const adminController = require("./controllers/admin");
@@ -26,7 +27,8 @@ db.once("open", () => console.log("Connected"));
 app.use(cors({
     origin: ["http://127.0.0.1:5501", "http://127.0.0.1:5500"]
 }));
-app.use(express.json());
+app.use(bodyparser.urlencoded({ extended: true }));
+// app.use(express.json());
 
 app.use(clientControlller);
 app.use("/admin", adminController, siswaController);

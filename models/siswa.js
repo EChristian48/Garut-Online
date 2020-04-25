@@ -145,19 +145,15 @@ const siswaSchema = new mongoose.Schema({
     kesehatan: {
         tbc: {
             type: Boolean,
-            required: true,
         },
         malaria: {
             type: Boolean,
-            required: true,
         },
         chotipa: {
             type: Boolean,
-            required: true,
         },
         cacar: {
             type: Boolean,
-            required: true,
         },
         lainnya: {
             type: String,
