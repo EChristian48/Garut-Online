@@ -16,6 +16,7 @@ router.post("/login", async (req, res) => {
             username: req.body.username,
             password: req.body.password
         })
+        res.send
     } catch (error) {
         res.send({message: error.message})
     }  
