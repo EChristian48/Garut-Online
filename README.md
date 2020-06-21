@@ -1,2 +1,2 @@
 # Garut-Online
-Online bos
+Sebenernya baru jadi CRUD
